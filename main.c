@@ -1,20 +1,31 @@
 #include <stdio.h>
 
 int main(void) {
-    int number;
-    int sum=0;
-    int i;
+    int num_1;
+    int num_2;
+    char operator;
 
-    printf("input a number: ");
-    scanf("%d", &number);
+    printf("Enter the calculation: ");
+    scanf("%d %c %d", &num_1, &operator, &num_2);
 
-    for (i=1; i<=number; i++) {
-        sum = sum + i;
+    switch (operator) {
+        case '+':
+        printf("%d + %d = %d\n", num_1, num_2, num_1 + num_2);
+        break;
+        case '-':
+        printf("%d - %d = %d\n", num_1, num_2, num_1 - num_2);
+        break;
+        case '*':
+        printf("%d * %d = %d\n", num_1, num_2, num_1 * num_2);
+        break;
+        case '/':
+        if (num_2 !=0)
+        printf("%d / %d = %d\n", num_1, num_2, num_1/num_2);
+        else
+        printf("Error: Division by zero is not allowed.\n");
+        break;
 
     }
-
-    printf("The result is %d\n", sum);
-return 0;
-
 }
+
 
